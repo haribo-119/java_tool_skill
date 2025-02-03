@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c16cbfc8-a7e2-42a0-85bb-af21fe196253" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java_tool_skill.iml" afterDir="false" />
+    <list default="true" id="c16cbfc8-a7e2-42a0-85bb-af21fe196253" name="Changes" comment="startUI() 생성중">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ability/TodoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ability/TodoApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,8 +88,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1738495216293</updated>
-      <workItem from="1738495217358" duration="12297000" />
+      <workItem from="1738495217358" duration="13849000" />
     </task>
+    <task id="LOCAL-00001" summary="startUI() 생성중">
+      <option name="closed" value="true" />
+      <created>1738509698765</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738509698765</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,5 +114,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="startUI() 생성중" />
+    <option name="LAST_COMMIT_MESSAGE" value="startUI() 생성중" />
   </component>
 </project>

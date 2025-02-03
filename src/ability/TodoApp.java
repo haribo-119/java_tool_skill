@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 
 public class TodoApp extends JFrame {
     private ArrayList<Task> tasks;
+    private JTextField taskInput;
     private static final String FILE_PATH ="tasks.txt";
 
     public static class Task{
@@ -29,7 +30,7 @@ public class TodoApp extends JFrame {
         dataload();
         startUI();
     }
-    public void dataload(){
+    private void dataload(){
 
         try{
             BufferedReader datas  = new BufferedReader(new FileReader("tasks.txt"));
@@ -51,7 +52,7 @@ public class TodoApp extends JFrame {
         }
     }//dataload()
 
-    public void startUI(){
+    private void startUI(){
         setTitle("to-do list");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400,600);
@@ -63,11 +64,24 @@ public class TodoApp extends JFrame {
         JButton addButton = new JButton("추가");
         addButton.addActionListener(e -> addTask());
 
+        inputPanel.add(taskInput);
+        inputPanel.add(addButton);
     }//startUI()
 
-    public void addTask(){
+    private void addTask(){
+      String inputText = taskInput.getText().trim();
+      if(inputText.isEmpty()){
+          String currentTime = LocalDateTime.now()
+                  .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+          tasks.add(new Task(inputText,false,currentTime));
+          taskInput.setText("");
+      }else{
+          JOptionPane.showConfirmDialog(this,
+                  "할일을 입력해주세요",
+                  "경고",JOptionPane.WARNING_MESSAGE);
+      }
 
-    }
+    }//addTask()
 
 
     public static void main(String[] args) {
