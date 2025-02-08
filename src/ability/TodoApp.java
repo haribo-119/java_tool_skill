@@ -1,5 +1,7 @@
 package ability;
 
+import com.sun.source.tree.NewArrayTree;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -11,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 public class TodoApp extends JFrame {
     private ArrayList<Task> tasks;
     private JTextField taskInput;
+    private JPanel taskPanel;
     private static final String FILE_PATH ="tasks.txt";
 
     public static class Task{
@@ -25,7 +28,7 @@ public class TodoApp extends JFrame {
         }
     }
 
-    public void TodoApp(){
+    public TodoApp(){
         tasks = new ArrayList<Task>();
         dataload();
         startUI();
@@ -33,15 +36,15 @@ public class TodoApp extends JFrame {
     private void dataload(){
 
         try{
-            BufferedReader datas  = new BufferedReader(new FileReader("tasks.txt"));
+            BufferedReader datas  = new BufferedReader(new FileReader(FILE_PATH));
             String data;
 
             while ((data=datas.readLine()) !=null){
                  String[] lines = data.split("\\|");
-                 if(data.length()==3) {
+                 if(lines.length == 3) {
                      String tilte = lines[0];
                      boolean check = Boolean.parseBoolean(lines[1]);
-                     String date = lines[3];
+                     String date = lines[2];
 
                      tasks.add(new Task(tilte, check, date));
                  }
@@ -66,23 +69,69 @@ public class TodoApp extends JFrame {
 
         inputPanel.add(taskInput);
         inputPanel.add(addButton);
+        add(inputPanel,BorderLayout.NORTH);
+
+        // 목록 패널
+        taskPanel = new JPanel();
+        taskPanel.setLayout(new BoxLayout(taskPanel,BoxLayout.Y_AXIS));
+        JScrollPane scrollPane = new JScrollPane(taskPanel);
+        add(scrollPane,BorderLayout.CENTER);
+
+
+
+
     }//startUI()
 
     private void addTask(){
       String inputText = taskInput.getText().trim();
-      if(inputText.isEmpty()){
+      if(!inputText.isEmpty()){
           String currentTime = LocalDateTime.now()
                   .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
           tasks.add(new Task(inputText,false,currentTime));
           taskInput.setText("");
+          updateTaskList();
+          saveTasks();
       }else{
-          JOptionPane.showConfirmDialog(this,
+          JOptionPane.showMessageDialog(this,
                   "할일을 입력해주세요",
                   "경고",JOptionPane.WARNING_MESSAGE);
       }
 
     }//addTask()
 
+    // 저장
+    private void saveTasks(){
+        try {
+           PrintWriter saveDate = new PrintWriter(new FileWriter(FILE_PATH));
+           for(Task task : tasks){
+              saveDate.println( task.title+"|" +
+                                task.check+"|" +
+                                task.date
+              );
+           }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void updateTaskList(){
+        taskPanel.removeAll();
+        for (int i = 0; i < tasks.size() ; i++) {
+            Task task = tasks.get(i);
+            JPanel taskRow = new JPanel(new BorderLayout());
+
+            JLabel label = new JLabel(task.title +"("+task.date+")");
+            if(task.check){
+                label.setForeground(Color.GRAY);
+            }
+            taskRow.add(label,BorderLayout.CENTER);
+            taskRow.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+            taskPanel.add(taskRow);
+        } //for문
+        taskPanel.revalidate();
+        taskPanel.repaint();
+    }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
