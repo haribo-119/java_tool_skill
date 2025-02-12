@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c16cbfc8-a7e2-42a0-85bb-af21fe196253" name="Changes" comment="startUI() 생성중">
+    <list default="true" id="c16cbfc8-a7e2-42a0-85bb-af21fe196253" name="Changes" comment="updateTaskList() 생성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ability/TodoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ability/TodoApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
@@ -44,10 +44,11 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.TodoApp">
+  <component name="RunManager" selected="애플리케이션.TodoApp">
     <configuration name="TestCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ability.TestCode" />
       <module name="java_tool_skill" />
@@ -76,8 +77,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TodoApp" />
-        <item itemvalue="Application.TestCode" />
+        <item itemvalue="애플리케이션.TodoApp" />
+        <item itemvalue="애플리케이션.TestCode" />
       </list>
     </recent_temporary>
   </component>
@@ -91,7 +92,13 @@
       <updated>1738495216293</updated>
       <workItem from="1738495217358" duration="13849000" />
       <workItem from="1738596920294" duration="218000" />
-      <workItem from="1739013118112" duration="9708000" />
+      <workItem from="1739013118112" duration="9850000" />
+      <workItem from="1739113668788" duration="696000" />
+      <workItem from="1739285716469" duration="1008000" />
+      <workItem from="1739286745296" duration="17000" />
+      <workItem from="1739286774010" duration="129000" />
+      <workItem from="1739286968771" duration="1580000" />
+      <workItem from="1739371476339" duration="3386000" />
     </task>
     <task id="LOCAL-00001" summary="startUI() 생성중">
       <option name="closed" value="true" />
@@ -109,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738597045369</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updateTaskList() 생성">
+      <option name="closed" value="true" />
+      <created>1739030989713</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739030989713</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +166,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="startUI() 생성중" />
-    <option name="LAST_COMMIT_MESSAGE" value="startUI() 생성중" />
+    <MESSAGE value="updateTaskList() 생성" />
+    <option name="LAST_COMMIT_MESSAGE" value="updateTaskList() 생성" />
   </component>
 </project>

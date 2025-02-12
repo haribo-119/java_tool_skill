@@ -35,18 +35,17 @@ public class TodoApp extends JFrame {
     }
     private void dataload(){
 
-        try{
-            BufferedReader datas  = new BufferedReader(new FileReader(FILE_PATH));
+        try (BufferedReader datas  = new BufferedReader(new FileReader(FILE_PATH))){
             String data;
 
             while ((data=datas.readLine()) !=null){
                  String[] lines = data.split("\\|");
                  if(lines.length == 3) {
-                     String tilte = lines[0];
+                     String title = lines[0];
                      boolean check = Boolean.parseBoolean(lines[1]);
                      String date = lines[2];
 
-                     tasks.add(new Task(tilte, check, date));
+                     tasks.add(new Task(title, check, date));
                  }
             }
 
@@ -77,8 +76,7 @@ public class TodoApp extends JFrame {
         JScrollPane scrollPane = new JScrollPane(taskPanel);
         add(scrollPane,BorderLayout.CENTER);
 
-
-
+        updateTaskList();
 
     }//startUI()
 
@@ -101,13 +99,11 @@ public class TodoApp extends JFrame {
 
     // 저장
     private void saveTasks(){
-        try {
-           PrintWriter saveDate = new PrintWriter(new FileWriter(FILE_PATH));
+        try (PrintWriter saveDate = new PrintWriter(new FileWriter("tasks.txt"))){
            for(Task task : tasks){
               saveDate.println( task.title+"|" +
                                 task.check+"|" +
-                                task.date
-              );
+                                task.date);
            }
         } catch (IOException e) {
             e.printStackTrace();
