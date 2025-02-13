@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c16cbfc8-a7e2-42a0-85bb-af21fe196253" name="Changes" comment="updateTaskList() 생성">
+    <list default="true" id="c16cbfc8-a7e2-42a0-85bb-af21fe196253" name="Changes" comment="앱 실행시, dataload()와 updateTaskList()가 실행되지 않았던 문제 해결">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ability/TodoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ability/TodoApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
@@ -98,7 +98,8 @@
       <workItem from="1739286745296" duration="17000" />
       <workItem from="1739286774010" duration="129000" />
       <workItem from="1739286968771" duration="1580000" />
-      <workItem from="1739371476339" duration="3386000" />
+      <workItem from="1739371476339" duration="3605000" />
+      <workItem from="1739454109970" duration="2527000" />
     </task>
     <task id="LOCAL-00001" summary="startUI() 생성중">
       <option name="closed" value="true" />
@@ -124,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739030989713</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="앱 실행시, dataload()와 updateTaskList()가 실행되지 않았던 문제 해결">
+      <option name="closed" value="true" />
+      <created>1739375098800</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739375098800</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +176,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="startUI() 생성중" />
     <MESSAGE value="updateTaskList() 생성" />
-    <option name="LAST_COMMIT_MESSAGE" value="updateTaskList() 생성" />
+    <MESSAGE value="앱 실행시, dataload()와 updateTaskList()가 실행되지 않았던 문제 해결" />
+    <option name="LAST_COMMIT_MESSAGE" value="앱 실행시, dataload()와 updateTaskList()가 실행되지 않았던 문제 해결" />
   </component>
 </project>

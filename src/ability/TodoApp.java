@@ -121,7 +121,33 @@ public class TodoApp extends JFrame {
             if(task.check){
                 label.setForeground(Color.GRAY);
             }
+            // 체크박스
+            JCheckBox checkBox = new JCheckBox();
+            checkBox.setSelected(task.check);
+            int number = i;
+            checkBox.addActionListener(e -> {
+                task.check = checkBox.isSelected();
+                updateTaskList();
+                saveTasks();
+            });
+
+            // 삭제 버튼
+            JButton deleteButton = new JButton("X");
+            deleteButton.addActionListener(e->{
+                int confirm = JOptionPane.showConfirmDialog(this,
+                        "삭제하시겠습니까?",
+                        "삭제 확인",
+                        JOptionPane.YES_NO_OPTION);
+                if(confirm == JOptionPane.YES_NO_OPTION){
+                    tasks.remove(number);
+                    updateTaskList();
+                    saveTasks();
+                }
+            });
+
             taskRow.add(label,BorderLayout.CENTER);
+            taskRow.add(deleteButton,BorderLayout.EAST);
+            taskRow.add(checkBox,BorderLayout.WEST);
             taskRow.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
             taskPanel.add(taskRow);
         } //for문
